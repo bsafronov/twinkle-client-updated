@@ -1,0 +1,9 @@
+@layer components {
+  .modal-box {
+    @apply absolute card py-2 right-0 -bottom-1 translate-y-full flex flex-col w-max items-end;
+  }
+
+  .modal-option {
+    @apply flex justify-between gap-4 px-2 py-2 hover:bg-slate-100 items-center cursor-pointer w-full select-none;
+  }
+}

@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+@import "./components/_index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.1px;
+  font-family: "Inter", "sans-serif";
+  background-color: theme("colors.slate.100");
+  line-height: normal;
+}
+
+body::-webkit-scrollbar {
+  position: fixed;
+  width: 10px;
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: theme("colors.slate.300");
+  border-radius: 16px;
+}
