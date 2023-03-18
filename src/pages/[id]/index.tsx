@@ -9,9 +9,9 @@ const UserPage: NextPage = () => {
   return (
     <MainLayout>
       <HomeHeader className="col-span-12 xl:col-span-8" />
-      <HomeInfo className="h-max col-span-12 md:col-span-4 row-span-2 xl:row-auto" />
-      <PostForm className="h-max md:row-start-2 col-span-12 md:col-span-8" />
-      <PostList className="h-max md:row-start-3 col-span-12 md:col-span-8 row-span-3" />
+      <HomeInfo className="col-span-12 row-span-2 h-max xl:col-span-4 xl:row-auto" />
+      <PostForm className="col-span-12 h-max xl:col-span-8 xl:row-start-2" />
+      <PostList className="col-span-12 row-span-3 h-max xl:col-span-8 xl:row-start-3" />
     </MainLayout>
   );
 };

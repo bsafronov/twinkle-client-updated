@@ -1,4 +1,4 @@
-import PostBodyImages from "./PostBodyImages";
+import PostBodyImages from "./PostBodyImages/PostBodyImages";
 import PostBodyMusic from "./PostBodyMusic";
 import PostBodyText from "./PostBodyText";
 
@@ -7,7 +7,7 @@ const PostBody = () => {
     <div className="flex flex-col gap-4">
       <PostBodyText />
       <PostBodyImages />
-      <PostBodyMusic />
+      {/* <PostBodyMusic /> */}
     </div>
   );
 };

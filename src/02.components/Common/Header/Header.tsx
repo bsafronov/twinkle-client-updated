@@ -3,23 +3,28 @@ import HeaderInput from "./HeaderInput";
 import HeaderTitle from "./HeaderTitle";
 import { HiChevronDown } from "react-icons/hi";
 import ShortPlayer from "../Player/ShortPlayer";
+import { useToggle } from "@/01.shared/hooks/useToggle";
+import HeaderModal from "./HeaderModal";
 const Header = () => {
+  const isModal = useToggle(false);
+
   return (
-    <div className="hidden lg:block fixed py-2 w-full border border-b-slate-200 bg-white z-[1000]">
+    <div className="dark:border- fixed z-[1000] hidden w-full border-b border-b-slate-200 bg-white py-2 dark:border-b-gray-700 dark:bg-gray-800 lg:block">
       <div className="container mx-auto flex items-center px-4">
         <HeaderTitle />
-        <div className="flex justify-between flex-grow">
-          <div className="flex gap-8 items-center">
+        <div className="flex flex-grow justify-between">
+          <div className="flex items-center gap-8">
             <HeaderInput />
             <HiBell size={20} className="icon" />
             <ShortPlayer className="hidden lg:flex" />
           </div>
-          <button className="flex items-center gap-2 hover:bg-slate-100 group">
-            <div className="rounded-full w-8 h-8 bg-orange-500 "></div>
-            <HiChevronDown
-              size={16}
-              className="icon group-hover:text-slate-400"
-            />
+          <button
+            className="hov-color group relative flex items-center gap-2"
+            onClick={isModal.toggle}
+          >
+            <div className="h-8 w-8 rounded-full bg-orange-500 "></div>
+            <HiChevronDown size={16} className="group-hov-color icon" />
+            {isModal.value && <HeaderModal />}
           </button>
         </div>
       </div>

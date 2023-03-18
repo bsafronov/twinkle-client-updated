@@ -1,5 +1,0 @@
-@layer components {
-  .input {
-    @apply rounded-lg py-1 px-2 border border-slate-200 focus:outline-none;
-  }
-}

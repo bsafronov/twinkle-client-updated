@@ -7,6 +7,7 @@ import AuthProvider from "@/01.shared/providers/AuthProvider";
 
 export default function App({ Component, ...rest }: AppProps) {
   const { store, props } = wrapper.useWrappedStore(rest);
+
   return (
     <Provider store={store}>
       <ThemeProvider>

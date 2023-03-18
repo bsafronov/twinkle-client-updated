@@ -16,12 +16,12 @@ const HomeHeader: FC<HomeHeaderProps> = (props) => {
       {...rest}
       className={clsx(
         className,
-        "min-h-[20rem] relative overflow-hidden card flex flex-col justify-end h-full"
+        "card relative flex h-full min-h-[20rem] flex-col justify-end overflow-hidden"
       )}
     >
       <HomeHeaderBackground />
-      <div className="flex flex-col gap-3 sm:gap-1 sm:flex-row sm:justify-between sm:items-start bg-white rounded-t-lg w-full box relative z-10 justify-center items-center">
-        <div className="flex flex-col sm:flex-row gap-1 sm:gap-4 items-center">
+      <div className="box relative z-10 flex w-full flex-col items-center justify-center gap-3 rounded-t-lg bg-white dark:bg-gray-800 sm:flex-row sm:items-start sm:justify-between sm:gap-1">
+        <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-4">
           <HomeHeaderAvatar />
           <HomeHeaderInfo />
         </div>

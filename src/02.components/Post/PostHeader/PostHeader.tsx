@@ -9,9 +9,9 @@ const PostHeader = () => {
   const isComments = useToggle(false);
 
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex gap-2 items-center">
-        <div className="rounded-full min-w-[3rem] min-h-[3rem] bg-slate-300"></div>
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <div className="min-h-[3rem] min-w-[3rem] rounded-full bg-slate-300"></div>
         <div className="flex flex-col">
           <Link
             href="#"

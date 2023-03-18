@@ -10,8 +10,8 @@ interface PostReactionsProps {
 const PostReactions: FC<PostReactionsProps> = (props) => {
   const { commentList } = props;
   return (
-    <div className="flex gap-2 items-center">
-      <div className="flex gap-1 items-center px-2 py-1 bg-slate-100 rounded-full hover:bg-slate-200 cursor-pointer group transition-colors">
+    <div className="flex items-center gap-2">
+      <div className="group flex cursor-pointer items-center gap-1 rounded-full bg-slate-100 px-2 py-1 transition-colors hover:bg-slate-200 dark:bg-slate-700">
         <HiHeart
           size={20}
           className="text-slate-400 transition-colors group-hover:text-red-500"
@@ -19,15 +19,15 @@ const PostReactions: FC<PostReactionsProps> = (props) => {
         <span className="text-slate-400">10</span>
       </div>
       <div
-        className="flex gap-1 items-center px-2 py-[0.327rem] bg-slate-100 rounded-full hover:bg-slate-200 cursor-pointer group transition-colors"
+        className="group flex cursor-pointer items-center gap-1 rounded-full bg-slate-100 px-2 py-[0.327rem] transition-colors hover:bg-slate-200 dark:bg-slate-700"
         onClick={commentList.toggle}
       >
         <HiChatBubbleLeft
           size={18}
           className={clsx(
-            "text-slate-400 group-hover:text-slate-500 transition-colors",
+            "text-slate-400 transition-colors group-hover:text-slate-500 dark:group-hover:text-slate-300",
             {
-              "text-slate-500": commentList.value,
+              "text-slate-500 dark:text-slate-300": commentList.value,
             }
           )}
         />

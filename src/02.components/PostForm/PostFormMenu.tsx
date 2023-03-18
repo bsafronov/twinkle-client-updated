@@ -12,6 +12,12 @@ interface PostFormMenuProps
 const PostFormMenu: FC<PostFormMenuProps> = (props) => {
   const { className, data } = props;
 
+  function handleUpload() {
+    const formData = new FormData();
+    formData.append("file", data.files[0].file, data.files[0].file.name);
+    console.log(formData.entries());
+  }
+
   return (
     <motion.div
       className={clsx(className, "overflow-hidden")}
@@ -26,6 +32,7 @@ const PostFormMenu: FC<PostFormMenuProps> = (props) => {
           className="btn-primary"
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
+          onClick={handleUpload}
         >
           Опубликовать
         </motion.button>

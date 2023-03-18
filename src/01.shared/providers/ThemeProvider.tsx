@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { useTheme } from "../hooks/useTheme";
+import useGridImages from "../hooks/useDisplayImages";
+import useTheme from "../hooks/useTheme";
 
 interface ThemeProviderProps {
   children: React.ReactNode;
@@ -8,6 +9,8 @@ interface ThemeProviderProps {
 const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children } = props;
   useTheme();
+  useGridImages();
+
   return <>{children}</>;
 };
 

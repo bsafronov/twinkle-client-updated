@@ -1,11 +1,11 @@
 import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import { clsx } from "clsx";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface ToggleProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  value: boolean;
-  toggle: () => void;
+  value?: boolean;
+  toggle?: () => void;
 }
 
 const Toggle: FC<ToggleProps> = (props) => {
@@ -16,18 +16,20 @@ const Toggle: FC<ToggleProps> = (props) => {
       {...rest}
       className={clsx(
         className,
-        "rounded-xl border border-slate-200 w-[28px] h-[16px] flex items-center p-[1px]"
+        "flex h-[16px] w-[28px] items-center rounded-xl border border-slate-200 p-[1px] dark:border-gray-600"
       )}
       onClick={toggle}
     >
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: value ? "100%" : 0 }}
-        className={clsx("rounded-full w-[12px] h-[12px]", {
-          "bg-slate-300": !value,
-          "bg-blue-500": value,
-        })}
-      ></motion.div>
+      <AnimatePresence initial={false}>
+        <motion.div
+          initial={{ x: 0 }}
+          animate={{ x: value ? "100%" : 0 }}
+          className={clsx("h-[12px] w-[12px] rounded-full", {
+            "bg-slate-300 dark:bg-gray-600": !value,
+            "bg-blue-500": value,
+          })}
+        ></motion.div>
+      </AnimatePresence>
     </div>
   );
 };

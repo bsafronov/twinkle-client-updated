@@ -1,19 +1,8 @@
 import clsx from "clsx";
-import { useMemo } from "react";
+import { useMemo, FC } from "react";
+import { PostBodyImage, PostBodyImageProps } from "./PostBodyImages";
 
-const PostBodyImages = () => {
-  const images = [
-    "/images/cat.jpg",
-    "/images/cat.jpg",
-    "/images/cat.jpg",
-    // "/images/cat.jpg",
-    // "/images/cat.jpg",
-    // "/images/cat.jpg",
-    // "/images/cat.jpg",
-    // "/images/cat.jpg",
-    // "/images/cat.jpg",
-  ];
-
+const PostBodyImagesGrid = ({ images }: PostBodyImageProps) => {
   const classNames = useMemo(() => calculateGrid(), [images.length]);
 
   function calculateGrid() {
@@ -62,7 +51,7 @@ const PostBodyImages = () => {
 
   return (
     <ul
-      className={clsx("rounded-lg overflow-hidden grid gap-1", classNames.cols)}
+      className={clsx("grid gap-1 overflow-hidden rounded-lg", classNames.cols)}
     >
       {images.map((item, index) => (
         <li
@@ -72,11 +61,11 @@ const PostBodyImages = () => {
             [classNames.addSpan]: index !== 0 && index !== 1,
           })}
         >
-          <img src={item} className="object-cover w-full h-full" />
+          <img src={item.path} className="h-full w-full object-cover" />
         </li>
       ))}
     </ul>
   );
 };
 
-export default PostBodyImages;
+export default PostBodyImagesGrid;

@@ -3,6 +3,7 @@ require("./src/01.shared/styles/cssAsPlugin");
 
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: ['class', 'html[data-theme="dark"]'],
   theme: {
     screens: {
       xs: "480px",
@@ -17,5 +18,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('./src/01.shared/styles/components.css')],
 };

@@ -36,7 +36,7 @@ const Textarea: FC<TextareaProps> = (props) => {
       onChange={(e) => handleOnChange(e)}
       className={clsx(
         className,
-        "resize-none w-full h-[16px] focus:outline-none"
+        "h-[16px] w-full resize-none bg-transparent focus:outline-none"
       )}
     />
   );

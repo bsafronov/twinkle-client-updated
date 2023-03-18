@@ -27,7 +27,7 @@ const PostFormMediaAudioModal: FC<PostFormMediaAudioModalProps> = (props) => {
 
   return (
     <motion.div
-      className="flex items-center justify-center fixed top-0 right-0 left-0 bottom-0 backdrop-blur-md backdrop-brightness-75 z-[2000]"
+      className="fixed top-0 right-0 left-0 bottom-0 z-[2000] flex items-center justify-center backdrop-blur-md backdrop-brightness-75"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -50,14 +50,14 @@ const PostFormMediaAudioModal: FC<PostFormMediaAudioModalProps> = (props) => {
             <input type="text" className="input" {...songName} />
           </div>
           <label htmlFor="audio_input">
-            <span className="btn-secondary py-1 px-2 rounded-lg block text-center cursor-pointer transition-colors">
+            <span className="btn-secondary block cursor-pointer rounded-lg py-1 px-2 text-center transition-colors">
               Выберите аудио
             </span>
           </label>
           {selectedFile && <span>{selectedFile.name}</span>}
         </div>
         <hr />
-        <div className="box flex justify-between bg-slate-100">
+        <div className="box flex justify-between bg-slate-100 dark:bg-gray-900">
           <button className="btn-danger" onClick={isModal.toggle}>
             Отмена
           </button>

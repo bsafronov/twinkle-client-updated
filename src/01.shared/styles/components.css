@@ -1,0 +1,50 @@
+@layer components {
+  /* Card */
+  .card {
+    @apply overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-gray-700 dark:bg-gray-800;
+  }
+  .box {
+    @apply p-4;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply border border-transparent bg-blue-500 text-white hover:bg-blue-600 disabled:bg-blue-400 disabled:hover:bg-blue-400;
+  }
+  .btn-secondary {
+    @apply border border-slate-200 bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-blue-500;
+  }
+  .btn-danger {
+    @apply border border-transparent bg-red-500 text-white hover:bg-red-600;
+  }
+  .btn-success {
+    @apply border border-transparent bg-green-500 text-white hover:bg-green-600;
+  }
+  .icon {
+    @apply cursor-pointer text-slate-300 transition-colors hover:text-slate-400 dark:text-slate-500 dark:hover:text-slate-300;
+  }
+
+  /* Hovers */
+
+  .hov-color {
+    @apply hover:bg-slate-100 dark:hover:bg-gray-700;
+  }
+
+  .group-hov-color {
+    @apply group-hover:text-slate-500 dark:group-hover:text-slate-300;
+  }
+
+  /* Inputs */
+  .input {
+    @apply rounded-lg border border-slate-200 py-1 px-2 focus:outline-none dark:border-gray-700 dark:bg-gray-600;
+  }
+
+  /* Modal */
+  .modal-box {
+    @apply card absolute right-0 -bottom-1 flex w-max translate-y-full flex-col items-end py-2;
+  }
+
+  .modal-option {
+    @apply flex w-full cursor-pointer select-none items-center justify-between gap-4 px-2 py-2 hover:bg-slate-100 dark:hover:bg-gray-700;
+  }
+}

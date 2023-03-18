@@ -1,0 +1,22 @@
+.swiper .swiper-button-next::after,
+.swiper .swiper-button-prev::after {
+  font-size: 2rem;
+  @apply text-blue-500 hover:bg-slate-500;
+}
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+  @apply h-[4rem] w-[4rem] select-none rounded-full transition-colors hover:bg-gray-700 hover:bg-opacity-25;
+}
+
+.swiper-pagination {
+  @apply !static mt-4;
+}
+
+.swiper-pagination-bullet {
+  @apply dark:!bg-gray-100;
+}
+
+.swiper-pagination-bullet-active {
+  @apply dark:!bg-blue-500;
+}

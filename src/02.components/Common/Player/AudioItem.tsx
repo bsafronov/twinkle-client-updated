@@ -12,10 +12,10 @@ const AudioItem: FC<AudioItemProps> = (props) => {
   const { className, children, audio, ...rest } = props;
 
   return (
-    <div {...rest} className={clsx(className, "flex gap-2 items-center")}>
+    <div {...rest} className={clsx(className, "flex items-center gap-2")}>
       <HiPlay
         size={32}
-        className="text-blue-500 hover:text-blue-600 cursor-pointer transition-colors"
+        className="cursor-pointer text-blue-500 transition-colors hover:text-blue-600"
       />
       {/* <HiPause
             size={32}
@@ -23,7 +23,9 @@ const AudioItem: FC<AudioItemProps> = (props) => {
           /> */}
       <div className="flex flex-col">
         <span>{audio.title}</span>
-        <span className="text-slate-300">{audio.author}</span>
+        <span className="text-slate-300 dark:text-slate-500">
+          {audio.author}
+        </span>
       </div>
     </div>
   );

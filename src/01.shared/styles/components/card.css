@@ -1,9 +1,0 @@
-@layer components {
-  .card {
-    @apply rounded-lg bg-white border border-slate-200;
-  }
-
-  .box {
-    @apply p-4;
-  }
-}

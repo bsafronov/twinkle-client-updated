@@ -12,10 +12,11 @@ const HomeInfo: FC<HomeInfoProps> = (props) => {
   return (
     <div
       {...rest}
-      className={clsx(className, "card h-full flex flex-col justify-between")}
+      className={clsx(className, "card flex h-full flex-col justify-between")}
     >
       <div className="hidden xl:block">
         <HomeInfoProfile />
+        <hr />
       </div>
       <HomeInfoLinks />
     </div>

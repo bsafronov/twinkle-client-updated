@@ -1,21 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-type ThemeStateTypes = "light" | "dark";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { DisplayImagesEnum, ThemeEnum } from "./theme.interface";
 
 interface ThemeStateProps {
-  theme: ThemeStateTypes;
+  theme: ThemeEnum;
+  displayImages: DisplayImagesEnum;
 }
+
 const initialState: ThemeStateProps = {
-  theme: "light",
+  theme: ThemeEnum.LIGHT,
+  displayImages: DisplayImagesEnum.SLIDER,
 };
 
 export const themeSlice = createSlice({
   name: "theme",
   initialState,
   reducers: {
-    toggleTheme(state) {
-      state.theme = state.theme === "light" ? "dark" : "light";
+    setTheme(state, action: PayloadAction<ThemeEnum>) {
+      state.theme = action.payload;
       localStorage.setItem("app-theme", state.theme);
+    },
+    setDisplayImages(state, action: PayloadAction<DisplayImagesEnum>) {
+      state.displayImages = action.payload;
+      localStorage.setItem("display-images", state.displayImages);
     },
   },
 });

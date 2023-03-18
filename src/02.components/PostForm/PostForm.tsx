@@ -23,7 +23,6 @@ const PostForm: FC<PostFormProps> = (props) => {
   const [files, setFiles] = useState<(UploadImageProps | UploadAudioProps)[]>(
     []
   );
-  console.log(files);
 
   const data: TransitFileUploadProps = useMemo(
     () => ({
@@ -31,6 +30,7 @@ const PostForm: FC<PostFormProps> = (props) => {
       handleAddMultipleFiles,
       handleRemoveFile,
       files,
+      text: input.value,
     }),
     [files.length]
   );

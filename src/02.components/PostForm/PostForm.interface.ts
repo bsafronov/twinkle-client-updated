@@ -17,6 +17,7 @@ export interface TransitFileUploadProps {
   ) => void;
   handleRemoveFile: (id: number) => void;
   files: (UploadImageProps | UploadAudioProps)[];
+  text: string;
 }
 
 export interface PostFormMediaAudioModalProps {

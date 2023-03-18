@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const HomeInfoLinks = () => {
   const homeLinks = [
     { desc: "Подписки", value: 10, href: "/" },
@@ -10,20 +8,14 @@ const HomeInfoLinks = () => {
     { desc: "Видео", value: 20, href: "/" },
   ];
 
-  const [hoveringItem, setHoveringItem] = useState<string>("");
-
   return (
-    <ul
-      className="grid grid-cols-3 md:grid-cols-2 gap-1 box border-t border-t-slate-100"
-      onMouseLeave={() => setHoveringItem("")}
-    >
+    <ul className="box grid grid-cols-3 gap-1 lg:grid-cols-3 xl:grid-cols-2">
       {homeLinks.map((item, index) => (
         <li
           key={index}
-          onMouseEnter={() => setHoveringItem(item.desc)}
-          className="group relative hover:bg-slate-100 transition-colors flex flex-col px-2 items-center rounded-lg cursor-pointer"
+          className="hov-color group relative flex cursor-pointer flex-col items-center rounded-lg px-2 transition-colors"
         >
-          <span className="relative z-10 group-hover:text-slate-500 text-slate-400 font-semibold transition-colors">
+          <span className="group-hov-color relative z-10 font-semibold text-slate-400 transition-colors">
             {item.desc}
           </span>
           <span className="relative z-10 text-lg font-semibold text-blue-500">
