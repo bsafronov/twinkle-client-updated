@@ -13,10 +13,10 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    login(state, action) {
+    login(state) {
       state.isAuth = true;
     },
-    logout(state, action) {
+    logout(state) {
       state.isAuth = false;
     },
   },
